@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Bioskop Ippnuda - Streaming Mobile Modern</title>
+    <title>Bioskop Ippnuda - Streaming Mobile</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -18,7 +18,7 @@
     <div id="searchOverlay" class="search-overlay">
         <div class="search-header">
             <button id="closeSearch" class="icon-btn"><i class="fas fa-arrow-left"></i></button>
-            <input type="text" id="searchInput" placeholder="Cari film di Bioskop Ippnuda...">
+            <input type="text" id="searchInput" placeholder="Cari judul atau genre...">
         </div>
     </div>
 
@@ -38,8 +38,16 @@
         <button class="genre-btn" data-genre="Romance">Romance</button>
     </div>
 
-    <main id="movieGrid" class="movie-grid">
-        </main>
+    <main>
+        <div id="movieGrid" class="movie-grid">
+            </div>
+
+        <div class="pagination">
+            <button id="prevBtn" class="page-btn"><i class="fas fa-chevron-left"></i> Prev</button>
+            <span id="pageInfo">Halaman 1</span>
+            <button id="nextBtn" class="page-btn">Next <i class="fas fa-chevron-right"></i></button>
+        </div>
+    </main>
 
     <div id="videoModal" class="modal">
         <div class="modal-content">
@@ -51,13 +59,13 @@
             </div>
             <div class="modal-info">
                 <h2 id="modalTitle">Judul Film</h2>
-                <span id="modalGenre">Genre</span>
+                <p>&copy; Bioskop Ippnuda Premium</p>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Bioskop Ippnuda | <span style="color:var(--primary)">Premium Streaming</span></p>
+        <p>&copy; 2026 Bioskop Ippnuda | Created by Ippnuda</p>
     </footer>
 
     <script src="script.js"></script>
