@@ -29,7 +29,6 @@ header {
 
 .logo { font-size: 1rem; font-weight: 800; letter-spacing: 0.5px; }
 .logo span { color: var(--primary); }
-
 .icon-btn { background: none; border: none; color: white; font-size: 1.1rem; cursor: pointer; }
 
 /* Search Overlay */
@@ -56,13 +55,14 @@ header {
 .genre-btn {
     background: #1a1a1a; border: 1px solid #333; color: #777;
     padding: 5px 12px; border-radius: 15px; font-size: 0.7rem; white-space: nowrap;
+    cursor: pointer;
 }
 .genre-btn.active { background: var(--primary); color: #000; border-color: var(--primary); font-weight: bold; }
 
-/* Grid System */
+/* Grid System - 3 Kolom Mobile */
 .movie-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 Kolom Mobile */
+    grid-template-columns: repeat(3, 1fr);
     gap: 8px;
     padding: 10px;
 }
@@ -71,9 +71,8 @@ header {
     .movie-grid { grid-template-columns: repeat(6, 1fr); gap: 20px; padding: 20px 5%; }
 }
 
-.movie-card { background: var(--card); border-radius: 6px; overflow: hidden; border: 1px solid #222; }
+.movie-card { background: var(--card); border-radius: 6px; overflow: hidden; border: 1px solid #222; cursor: pointer; }
 .movie-card img { width: 100%; height: 150px; object-fit: cover; }
-
 @media (min-width: 1024px) { .movie-card img { height: 260px; } }
 
 .movie-info { padding: 6px; }
@@ -89,18 +88,31 @@ header {
 .page-btn:disabled { border-color: #333; color: #444; cursor: not-allowed; }
 #pageInfo { font-size: 0.75rem; color: #666; }
 
-/* Modal */
-.modal { display: none; position: fixed; inset: 0; background: #000; z-index: 1000; }
-.modal-content { display: flex; flex-direction: column; height: 100%; }
-.close-modal {
-    position: absolute; right: 15px; top: 15px; color: white; background: rgba(255,255,255,0.1);
-    border: none; border-radius: 50%; width: 35px; height: 35px; z-index: 10;
+/* Modal - Fix Desktop Kontrol */
+.modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 1000; }
+.modal-content { 
+    display: flex; 
+    flex-direction: column; 
+    width: 100%; 
+    max-width: 900px; 
+    margin: 0 auto; 
+    height: 100%; 
+    background: #000; 
 }
-.video-wrapper { flex: 1; display: flex; align-items: center; }
+@media (min-width: 1024px) {
+    .modal-content { height: auto; top: 50%; transform: translateY(-50%); border-radius: 10px; border: 1px solid #333; }
+}
+
+.close-modal {
+    position: absolute; right: 15px; top: 15px; color: white; background: rgba(255,255,255,0.2);
+    border: none; border-radius: 50%; width: 35px; height: 35px; z-index: 10; cursor: pointer;
+}
+.video-wrapper { width: 100%; }
 .video-container { width: 100%; position: relative; padding-bottom: 56.25%; }
 .video-container iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
+
 .modal-info { padding: 20px; background: #111; }
 .modal-info h2 { font-size: 1rem; margin: 0; }
-.modal-info p { font-size: 0.7rem; color: #555; }
+.modal-info p { font-size: 0.7rem; color: #555; margin-top: 5px; }
 
 footer { text-align: center; padding: 20px; font-size: 0.7rem; opacity: 0.5; }
