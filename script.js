@@ -6,7 +6,6 @@ const closeSearch = document.getElementById('closeSearch');
 const modal = document.getElementById('videoModal');
 const videoPlayer = document.getElementById('videoPlayer');
 const modalTitle = document.getElementById('modalTitle');
-const modalGenre = document.getElementById('modalGenre');
 const closeModalBtn = document.querySelector('.close-modal');
 const genreBtns = document.querySelectorAll('.genre-btn');
 
@@ -19,7 +18,7 @@ async function init() {
         allMovies = data.films;
         renderMovies(allMovies);
     } catch (err) {
-        movieGrid.innerHTML = `<p style="grid-column: 1/-1; text-align:center;">Gagal memuat film.</p>`;
+        movieGrid.innerHTML = `<p style="grid-column: 1/-1; text-align:center;">Gagal memuat data.</p>`;
     }
 }
 
@@ -40,12 +39,22 @@ function renderMovies(movies) {
     });
 }
 
+// Fungsi Pencarian
+searchInput.addEventListener('input', (e) => {
+    const keyword = e.target.value.toLowerCase();
+    const filtered = allMovies.filter(m => 
+        m.title.toLowerCase().includes(keyword) || 
+        m.genre.toLowerCase().includes(keyword)
+    );
+    renderMovies(filtered);
+});
+
+// Kontrol Modal & Filter (Sama seperti sebelumnya)
 function openPlayer(movie) {
     const videoIdMatch = movie.url.match(/[-\w]{25,}/);
     if (videoIdMatch) {
         videoPlayer.src = `https://drive.google.com/file/d/${videoIdMatch[0]}/preview`;
         modalTitle.innerText = movie.title;
-        modalGenre.innerText = movie.genre;
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
     }
@@ -64,14 +73,9 @@ searchBtn.onclick = () => {
 
 closeSearch.onclick = () => {
     searchOverlay.style.display = 'none';
+    searchInput.value = '';
     renderMovies(allMovies);
 };
-
-searchInput.addEventListener('input', (e) => {
-    const keyword = e.target.value.toLowerCase();
-    const filtered = allMovies.filter(m => m.title.toLowerCase().includes(keyword));
-    renderMovies(filtered);
-});
 
 genreBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -80,7 +84,6 @@ genreBtns.forEach(btn => {
         const genre = btn.dataset.genre;
         const filtered = genre === 'All' ? allMovies : allMovies.filter(m => m.genre === genre);
         renderMovies(filtered);
-        window.scrollTo(0, 0);
     });
 });
 
