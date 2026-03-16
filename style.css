@@ -37,7 +37,7 @@ header {
     position: fixed;
     inset: 0;
     background: var(--bg);
-    z-index: 200;
+    z-index: 1000;
 }
 .search-header { display: flex; align-items: center; padding: 10px; border-bottom: 1px solid #333; }
 #searchInput { flex: 1; background: none; border: none; color: white; font-size: 0.9rem; padding: 10px; outline: none; }
@@ -88,30 +88,46 @@ header {
 .page-btn:disabled { border-color: #333; color: #444; cursor: not-allowed; }
 #pageInfo { font-size: 0.75rem; color: #666; }
 
-/* Modal - Fix Desktop Kontrol */
-.modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 1000; }
+/* Modal Player (Fix Terpotong di Desktop) */
+.modal { 
+    display: none; 
+    position: fixed; 
+    inset: 0; 
+    background: rgba(0,0,0,0.95); 
+    z-index: 2000; 
+    padding: 20px;
+}
+
 .modal-content { 
     display: flex; 
     flex-direction: column; 
     width: 100%; 
     max-width: 900px; 
     margin: 0 auto; 
-    height: 100%; 
-    background: #000; 
+    background: #111; 
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    top: 50%;
+    transform: translateY(-50%);
 }
-@media (min-width: 1024px) {
-    .modal-content { height: auto; top: 50%; transform: translateY(-50%); border-radius: 10px; border: 1px solid #333; }
+
+/* Mobile full screen modal */
+@media (max-width: 768px) {
+    .modal { padding: 0; }
+    .modal-content { height: 100%; border-radius: 0; top: 0; transform: none; }
 }
 
 .close-modal {
-    position: absolute; right: 15px; top: 15px; color: white; background: rgba(255,255,255,0.2);
+    position: absolute; right: 15px; top: 15px; color: white; background: rgba(0,0,0,0.5);
     border: none; border-radius: 50%; width: 35px; height: 35px; z-index: 10; cursor: pointer;
 }
-.video-wrapper { width: 100%; }
+
+.video-wrapper { width: 100%; background: #000; }
 .video-container { width: 100%; position: relative; padding-bottom: 56.25%; }
 .video-container iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
 
-.modal-info { padding: 20px; background: #111; }
+.modal-info { padding: 20px; background: #111; border-top: 1px solid #222; }
 .modal-info h2 { font-size: 1rem; margin: 0; }
 .modal-info p { font-size: 0.7rem; color: #555; margin-top: 5px; }
 
