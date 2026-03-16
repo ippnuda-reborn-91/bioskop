@@ -2,29 +2,27 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nonton Tipi - Streaming Modern</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bioskop Ippnuda - Streaming Mobile Modern</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <nav>
-            <div class="logo">BIOSKOP <span>IPPNUDA</span></div>
-            <div class="search-bar">
-                <i class="fas fa-search"></i>
-                <input type="text" id="searchInput" placeholder="Cari film favorit...">
-            </div>
-        </nav>
+        <div class="logo">BIOSKOP <span>IPPNUDA</span></div>
+        <button id="searchBtn" class="icon-btn"><i class="fas fa-search"></i></button>
     </header>
 
-    <div class="hero">
-        <h1>Selamat Datang di Bioskop Ippnuda</h1>
-        <p>Streaming film favorit langsung dari koleksi pribadi.</p>
+    <div id="searchOverlay" class="search-overlay">
+        <div class="search-header">
+            <button id="closeSearch" class="icon-btn"><i class="fas fa-arrow-left"></i></button>
+            <input type="text" id="searchInput" placeholder="Cari film di Bioskop Ippnuda...">
+        </div>
     </div>
 
-    <section class="genre-container">
+    <div class="genre-container">
         <button class="genre-btn active" data-genre="All">Semua</button>
         <button class="genre-btn" data-genre="Action">Action</button>
         <button class="genre-btn" data-genre="Adventure">Adventure</button>
@@ -38,16 +36,18 @@
         <button class="genre-btn" data-genre="Perjuangan">Perjuangan</button>
         <button class="genre-btn" data-genre="Religi">Religi</button>
         <button class="genre-btn" data-genre="Romance">Romance</button>
-    </section>
+    </div>
 
     <main id="movieGrid" class="movie-grid">
         </main>
 
     <div id="videoModal" class="modal">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="video-container">
-                <iframe id="videoPlayer" src="" frameborder="0" allowfullscreen></iframe>
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+            <div class="video-wrapper">
+                <div class="video-container">
+                    <iframe id="videoPlayer" src="" frameborder="0" allowfullscreen></iframe>
+                </div>
             </div>
             <div class="modal-info">
                 <h2 id="modalTitle">Judul Film</h2>
@@ -57,7 +57,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 | Created by <strong>Ippnuda</strong></p>
+        <p>&copy; 2026 Bioskop Ippnuda | <span style="color:var(--primary)">Premium Streaming</span></p>
     </footer>
 
     <script src="script.js"></script>
