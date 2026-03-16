@@ -1,7 +1,7 @@
 {
   "films": [
     {
-      "title": "Ada Apa Dengan Cinta 2 (Romance)",
+      "title": "Ada Apa Dengan Cinta 2",
       "genre": "Romance",
       "poster": "https://upload.wikimedia.org/wikipedia/id/6/60/Ada_Apa_Denga_Cinta_2.jpg",
       "url": "https://drive.google.com/file/d/1tWN9c980FUC-TGByaeEY9JGjLNIKJdRA/view"
@@ -55,10 +55,10 @@
       "url": "https://drive.google.com/file/d/1CqnkLQFOCsE_K4sLYeRlOkIn1zB_gCXg/view"
     },
     {
-      "title": "AADC 2 - Kolosal Version",
-      "genre": "Kolosal",
-      "poster": "https://upload.wikimedia.org/wikipedia/id/6/60/Ada_Apa_Denga_Cinta_2.jpg",
-      "url": "https://drive.google.com/file/d/1tWN9c980FUC-TGByaeEY9JGjLNIKJdRA/view"
+      "title": "Muhammad: The Messenger of God",
+      "genre": "Religi",
+      "poster": "https://upload.wikimedia.org/wikipedia/id/e/ed/Muhammad_-_The_Messenger_of_God_poster.jpg",
+      "url": "https://drive.google.com/file/d/1ZscWlm_ZyGFGeVMur2oqJLDfrQv1Ugin/view"
     }
   ]
 }
