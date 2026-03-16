@@ -1,0 +1,16 @@
+{
+  "films": [
+    {
+      "title": "Judul Film Contoh",
+      "genre": "Religi",
+      "poster": "https://via.placeholder.com/300x450",
+      "url": "https://drive.google.com/uc?export=download&id=ID_FILE_DRIVE_ANDA"
+    },
+    {
+      "title": "Film Action Keren",
+      "genre": "Action",
+      "poster": "https://via.placeholder.com/300x450",
+      "url": "https://drive.google.com/uc?export=download&id=ID_FILE_DRIVE_LAIN"
+    }
+  ]
+}
