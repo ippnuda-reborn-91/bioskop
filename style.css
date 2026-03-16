@@ -6,10 +6,7 @@
     --font: 'Inter', sans-serif;
 }
 
-* { 
-    box-sizing: border-box; 
-    -webkit-tap-highlight-color: transparent;
-}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
 body {
     font-family: var(--font);
@@ -18,7 +15,6 @@ body {
     margin: 0;
 }
 
-/* Header */
 header {
     display: flex;
     justify-content: space-between;
@@ -31,10 +27,12 @@ header {
     border-bottom: 1px solid #222;
 }
 
-.logo { font-size: 1rem; font-weight: 800; }
+.logo { font-size: 1rem; font-weight: 800; letter-spacing: 0.5px; }
 .logo span { color: var(--primary); }
 
-/* Pencarian Overlay */
+.icon-btn { background: none; border: none; color: white; font-size: 1.1rem; cursor: pointer; }
+
+/* Search Overlay */
 .search-overlay {
     display: none;
     position: fixed;
@@ -42,102 +40,67 @@ header {
     background: var(--bg);
     z-index: 200;
 }
-.search-header {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #333;
-}
-#searchInput {
-    flex: 1;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 0.9rem;
-    padding: 10px;
-    outline: none;
-}
+.search-header { display: flex; align-items: center; padding: 10px; border-bottom: 1px solid #333; }
+#searchInput { flex: 1; background: none; border: none; color: white; font-size: 0.9rem; padding: 10px; outline: none; }
 
-/* Menu Genre (Lebih Kecil) */
+/* Genre Bar */
 .genre-container {
     display: flex;
     overflow-x: auto;
     padding: 8px 5%;
     gap: 6px;
     background: #000;
+    scrollbar-width: none;
 }
 .genre-container::-webkit-scrollbar { display: none; }
-
 .genre-btn {
-    background: #1a1a1a;
-    border: 1px solid #333;
-    color: #777;
-    padding: 5px 12px; /* Ukuran menu lebih kecil */
-    border-radius: 15px;
-    font-size: 0.7rem; /* Font menu lebih kecil */
-    white-space: nowrap;
+    background: #1a1a1a; border: 1px solid #333; color: #777;
+    padding: 5px 12px; border-radius: 15px; font-size: 0.7rem; white-space: nowrap;
 }
-.genre-btn.active {
-    background: var(--primary);
-    color: #000;
-    border-color: var(--primary);
-}
+.genre-btn.active { background: var(--primary); color: #000; border-color: var(--primary); font-weight: bold; }
 
-/* Grid Film: 3 Kolom di HP, 5-6 Kolom di Desktop */
+/* Grid System */
 .movie-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Default HP: 3 Kolom */
+    grid-template-columns: repeat(3, 1fr); /* 3 Kolom Mobile */
     gap: 8px;
     padding: 10px;
 }
 
-/* Responsif untuk Layar Besar (Desktop) */
-@media (min-width: 768px) {
-    .movie-grid {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-        gap: 20px;
-        padding: 30px 5%;
-    }
-    .logo { font-size: 1.5rem; }
+@media (min-width: 1024px) {
+    .movie-grid { grid-template-columns: repeat(6, 1fr); gap: 20px; padding: 20px 5%; }
 }
 
-.movie-card {
-    background: var(--card);
-    border-radius: 6px;
-    overflow: hidden;
-}
+.movie-card { background: var(--card); border-radius: 6px; overflow: hidden; border: 1px solid #222; }
+.movie-card img { width: 100%; height: 150px; object-fit: cover; }
 
-.movie-card img {
-    width: 100%;
-    height: 150px; /* Tinggi poster lebih pendek untuk 3 kolom */
-    object-fit: cover;
-}
+@media (min-width: 1024px) { .movie-card img { height: 260px; } }
 
-@media (min-width: 768px) {
-    .movie-card img { height: 260px; }
-}
-
-/* Teks Judul & Genre Lebih Kecil */
 .movie-info { padding: 6px; }
-.movie-info h3 {
-    margin: 0;
-    font-size: 0.7rem; /* Ukuran judul diperkecil */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.movie-info span { 
-    font-size: 0.6rem; /* Ukuran genre diperkecil */
-    color: var(--primary); 
-}
+.movie-info h3 { margin: 0; font-size: 0.7rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.movie-info span { font-size: 0.6rem; color: var(--primary); }
 
-/* Modal Player */
+/* Pagination */
+.pagination { display: flex; justify-content: center; align-items: center; gap: 15px; padding: 20px 0; }
+.page-btn {
+    background: #222; border: 1px solid var(--primary); color: var(--primary);
+    padding: 6px 12px; border-radius: 4px; font-size: 0.75rem; cursor: pointer;
+}
+.page-btn:disabled { border-color: #333; color: #444; cursor: not-allowed; }
+#pageInfo { font-size: 0.75rem; color: #666; }
+
+/* Modal */
 .modal { display: none; position: fixed; inset: 0; background: #000; z-index: 1000; }
 .modal-content { display: flex; flex-direction: column; height: 100%; }
+.close-modal {
+    position: absolute; right: 15px; top: 15px; color: white; background: rgba(255,255,255,0.1);
+    border: none; border-radius: 50%; width: 35px; height: 35px; z-index: 10;
+}
 .video-wrapper { flex: 1; display: flex; align-items: center; }
 .video-container { width: 100%; position: relative; padding-bottom: 56.25%; }
 .video-container iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
-.close-modal {
-    position: absolute; right: 15px; top: 15px; color: white; 
-    background: rgba(255,255,255,0.2); border: none; border-radius: 50%; width: 35px; height: 35px;
-}
+.modal-info { padding: 20px; background: #111; }
+.modal-info h2 { font-size: 1rem; margin: 0; }
+.modal-info p { font-size: 0.7rem; color: #555; }
+
+footer { text-align: center; padding: 20px; font-size: 0.7rem; opacity: 0.5; }
