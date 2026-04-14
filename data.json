@@ -72,11 +72,23 @@
       "poster": "https://upload.wikimedia.org/wikipedia/id/e/ed/Muhammad_-_The_Messenger_of_God_poster.jpg",
       "url": "https://drive.google.com/file/d/1ZscWlm_ZyGFGeVMur2oqJLDfrQv1Ugin/view"
     },
+     {
+      "title": "Jenderal Soedirman",
+      "genre": "Perjuangan",
+      "poster": "https://upload.wikimedia.org/wikipedia/id/4/41/Jenderal_Soedirman_%28poster%29.jpg",
+      "url": "https://drive.google.com/file/d/1sna2oCnV9OjRF1ogUvuHyxu3x8K1gSDL/view"
+    },
     {
       "title": "Tenggelamnya Kapal Van der Wijck",
       "genre": "Romance",
       "poster": "https://upload.wikimedia.org/wikipedia/id/2/2b/Poster_film_Tenggelamnya_Kapal_van_der_Wijck.jpg",
       "url": "https://drive.google.com/file/d/1XFRSsl3vpCvQGEw3e9sjCCtZwfCz_2_I/view"
+    },
+    {
+      "title": "The Rings of Power S01E01",
+      "genre": "Fantasi",
+      "poster": "https://upload.wikimedia.org/wikipedia/en/6/65/TROP_season_1_poster.jpg",
+      "url": "https://drive.google.com/file/d/1ZRTVfJkkESgcLpn4J03qW3GLHuHKM1Eg/view"
     },
     {
       "title": "The Rings of Power S01E02",
@@ -85,10 +97,16 @@
       "url": "https://drive.google.com/file/d/1l_9zB78VOr4ykGqdhcp11srBKVAkZmdc/view"
     },
     {
-      "title": "Jenderal Soedirman",
-      "genre": "Perjuangan",
-      "poster": "https://upload.wikimedia.org/wikipedia/id/4/41/Jenderal_Soedirman_%28poster%29.jpg",
-      "url": "https://drive.google.com/file/d/1sna2oCnV9OjRF1ogUvuHyxu3x8K1gSDL/view"
+      "title": "The Rings of Power S01E03",
+      "genre": "Fantasi",
+      "poster": "https://upload.wikimedia.org/wikipedia/en/6/65/TROP_season_1_poster.jpg",
+      "url": "https://drive.google.com/file/d/1SoYyByXQWThWTMAlq0Qq2d1a2cEhRfn7/view"
+    },
+    {
+      "title": "The Rings of Power S01E03",
+      "genre": "Fantasi",
+      "poster": "https://upload.wikimedia.org/wikipedia/en/6/65/TROP_season_1_poster.jpg",
+      "url": "https://drive.google.com/file/d/1SoYyByXQWThWTMAlq0Qq2d1a2cEhRfn7/view"
     }
   ]
 }
